@@ -1,8 +1,8 @@
-#Cadastro e Consulta de Imóveis
+# Cadastro e Consulta de Imóveis
 
-##Este programa tem como objetivo criar uma aplicação para cadastrar e consultar imóveis. A aplicação é escrita em Python, utilizando a biblioteca Tkinter para a interface gráfica do usuário e SQLite para o gerenciamento do banco de dados.
+## Este programa tem como objetivo criar uma aplicação para cadastrar e consultar imóveis. A aplicação é escrita em Python, utilizando a biblioteca Tkinter para a interface gráfica do usuário e SQLite para o gerenciamento do banco de dados.
 
-#Funcionalidades
+# Funcionalidades
 - Cadastro de imóveis com as seguintes informações:
 - Tipo de negociação (Venda, Locação, Venda/Locação)
 -Status do imóvel (Disponível, Locado, Vendido, À liberar)
@@ -13,12 +13,12 @@
 - Condições do imóvel
 - Observações sobre o imóvel
 
-#Pré-requisitos
+# Pré-requisitos
 - Python 3.x (recomendável a versão mais recente)
 - Tkinter (geralmente vem pré-instalado com o Python)
 
-#Como executar
-##Para executar a aplicação:
+# Como executar
+## Para executar a aplicação:
 
 1. Clone o repositório ou baixe o projeto em seu computador.
 
@@ -34,8 +34,8 @@ Ou, se você estiver usando uma versão específica do Python:
 
 Ao executar o programa, a interface gráfica da aplicação de cadastro de imóveis será exibida. Preencha os campos com as informações do imóvel e clique em "Cadastrar" para salvar os dados no banco de dados. Você também pode clicar em "Limpar" para limpar o formulário.
 
-#Estrutura do projeto
-##O projeto é dividido nos seguintes arquivos:
+# Estrutura do projeto
+##O  projeto é dividido nos seguintes arquivos:
 
 - database.py: Responsável pela conexão ao banco de dados SQLite e criação da tabela "imoveis".
 - functions.py: Contém as funções auxiliares para inserir dados no banco de dados e limpar o formulário.
