@@ -43,10 +43,10 @@ Ao executar o programa, a interface gráfica da aplicação de cadastro de imóv
 
 # Se você deseja testar o código, siga os passos a seguir:
 
-Certifique-se de que o Python (versão 3) está instalado em seu computador.
-Copie o código inteiro e cole-o em um arquivo.py (por exemplo: imoveis_app.py).
-Abra o terminal (prompt de comando no Windows) e navegue até o diretório onde você salvou o arquivo imoveis_app.py
-Agora, execute o seguinte comando no terminal:
+1. Certifique-se de que o Python (versão 3) está instalado em seu computador.
+2. Copie o código inteiro e cole-o em um arquivo.py (por exemplo: imoveis_app.py).
+3. Abra o terminal (prompt de comando no Windows) e navegue até o diretório onde você salvou o arquivo imoveis_app.py
+4. Agora, execute o seguinte comando no terminal:
 
 Copie o código
 *python imoveis_app.py*
