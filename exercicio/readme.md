@@ -40,3 +40,22 @@ Ao executar o programa, a interface gráfica da aplicação de cadastro de imóv
 - database.py: Responsável pela conexão ao banco de dados SQLite e criação da tabela "imoveis".
 - functions.py: Contém as funções auxiliares para inserir dados no banco de dados e limpar o formulário.
 - gui.py (ou main.py): Contém a interface gráfica da aplicação usando Tkinter.
+
+# Se você deseja testar o código, siga os passos a seguir:
+
+Certifique-se de que o Python (versão 3) está instalado em seu computador.
+Copie o código inteiro e cole-o em um arquivo.py (por exemplo: imoveis_app.py).
+Abra o terminal (prompt de comando no Windows) e navegue até o diretório onde você salvou o arquivo imoveis_app.py
+Agora, execute o seguinte comando no terminal:
+
+Copie o código
+*python imoveis_app.py*
+
+## Se você estiver usando Python 3 em um ambiente Linux ou macOS e o comando python estiver mapeado para Python 2, use python3 em vez disso:
+
+Copie o código
+*python3 imoveis_app.py*
+
+## Se o programa rodar sem problemas, você verá uma janela com os campos para preencher as informações dos imóveis, assim como botões "Cadastrar" e "Limpar".
+
+Caso enfrentar algum erro durante a execução do código, por favor, compartilhe-o aqui para que possamos ajudá-lo a solucionar o problema.
