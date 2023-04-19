@@ -35,7 +35,7 @@ Ou, se você estiver usando uma versão específica do Python:
 Ao executar o programa, a interface gráfica da aplicação de cadastro de imóveis será exibida. Preencha os campos com as informações do imóvel e clique em "Cadastrar" para salvar os dados no banco de dados. Você também pode clicar em "Limpar" para limpar o formulário.
 
 # Estrutura do projeto
-##O  projeto é dividido nos seguintes arquivos:
+## O  projeto é dividido nos seguintes arquivos:
 
 - database.py: Responsável pela conexão ao banco de dados SQLite e criação da tabela "imoveis".
 - functions.py: Contém as funções auxiliares para inserir dados no banco de dados e limpar o formulário.
