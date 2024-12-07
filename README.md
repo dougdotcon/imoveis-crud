@@ -1,61 +1,97 @@
 # Cadastro e Consulta de Imóveis
 
-## Este programa tem como objetivo criar uma aplicação para cadastrar e consultar imóveis. A aplicação é escrita em Python, utilizando a biblioteca Tkinter para a interface gráfica do usuário e SQLite para o gerenciamento do banco de dados.
+## Visão Geral
 
-# Funcionalidades
-- Cadastro de imóveis com as seguintes informações:
-- Tipo de negociação (Venda, Locação, Venda/Locação)
--Status do imóvel (Disponível, Locado, Vendido, À liberar)
-- Endereço do imóvel
-- Tipo do imóvel (Apartamento, Casa, Terreno)
-- Características do imóvel
-- Preço do imóvel
-- Condições do imóvel
-- Observações sobre o imóvel
+Este programa é uma aplicação de cadastro e consulta de imóveis desenvolvida em **Python**, utilizando a biblioteca **Tkinter** para a interface gráfica e **SQLite** para o gerenciamento de banco de dados. A aplicação permite o armazenamento, consulta e gerenciamento de informações sobre imóveis de forma intuitiva e eficiente.
 
-# Pré-requisitos
-- Python 3.x (recomendável a versão mais recente)
-- Tkinter (geralmente vem pré-instalado com o Python)
+## Funcionalidades
 
-# Como executar
-## Para executar a aplicação:
+- **Cadastro de Imóveis:**
+  - Tipo de negociação: Venda, Locação, Venda/Locação.
+  - Status do imóvel: Disponível, Locado, Vendido, À liberar.
+  - Endereço do imóvel.
+  - Tipo do imóvel: Apartamento, Casa, Terreno.
+  - Características do imóvel.
+  - Preço do imóvel.
+  - Condições do imóvel.
+  - Observações adicionais.
 
-1. Clone o repositório ou baixe o projeto em seu computador.
+- **Interface Intuitiva:**
+  - Formulário para entrada de dados.
+  - Botão **Cadastrar** para salvar as informações.
+  - Botão **Limpar** para limpar o formulário.
 
-2. Navegue até a pasta onde estão os arquivos database.py, functions.py e gui.py (ou main.py).
+- **Banco de Dados:**
+  - Conexão com o SQLite.
+  - Persistência de dados para consulta posterior.
 
-3. Execute o arquivo gui.py (ou main.py) com o comando:
+## Pré-requisitos
 
-*python gui.py*
+- **Python 3.x** (Recomenda-se a versão mais recente)
+- **Tkinter** (Geralmente incluído na instalação do Python)
 
-Ou, se você estiver usando uma versão específica do Python:
+## Como Executar
 
-*python3 gui.py*
+1. **Clone o Repositório:**
 
-Ao executar o programa, a interface gráfica da aplicação de cadastro de imóveis será exibida. Preencha os campos com as informações do imóvel e clique em "Cadastrar" para salvar os dados no banco de dados. Você também pode clicar em "Limpar" para limpar o formulário.
+   ```bash
+   git clone https://github.com/seu-usuario/cadastro-imoveis.git
+   ```
 
-# Estrutura do projeto
-## O  projeto é dividido nos seguintes arquivos:
+2. **Navegue até o Diretório do Projeto:**
 
-- database.py: Responsável pela conexão ao banco de dados SQLite e criação da tabela "imoveis".
-- functions.py: Contém as funções auxiliares para inserir dados no banco de dados e limpar o formulário.
-- gui.py (ou main.py): Contém a interface gráfica da aplicação usando Tkinter.
+   ```bash
+   cd cadastro-imoveis
+   ```
 
-# Se você deseja testar o código, siga os passos a seguir:
+3. **Execute a Aplicação:**
 
-1. Certifique-se de que o Python (versão 3) está instalado em seu computador.
-2. Copie o código inteiro e cole-o em um arquivo.py (por exemplo: imoveis_app.py).
-3. Abra o terminal (prompt de comando no Windows) e navegue até o diretório onde você salvou o arquivo imoveis_app.py
-4. Agora, execute o seguinte comando no terminal:
+   Utilize o seguinte comando para iniciar o programa:
 
-Copie o código
-*python imoveis_app.py*
+   ```bash
+   python gui.py
+   ```
 
-## Se você estiver usando Python 3 em um ambiente Linux ou macOS e o comando python estiver mapeado para Python 2, use python3 em vez disso:
+   Ou, caso utilize uma versão específica do Python:
 
-Copie o código
-*python3 imoveis_app.py*
+   ```bash
+   python3 gui.py
+   ```
 
-## Se o programa rodar sem problemas, você verá uma janela com os campos para preencher as informações dos imóveis, assim como botões "Cadastrar" e "Limpar".
+4. **Utilize a Interface Gráfica:**
+   - Preencha os campos necessários.
+   - Clique em **Cadastrar** para salvar os dados no banco de dados.
+   - Use o botão **Limpar** para apagar os dados do formulário.
 
-Caso enfrentar algum erro durante a execução do código, por favor, compartilhe-o aqui para que possamos ajudá-lo a solucionar o problema.
+## Estrutura do Projeto
+
+O projeto é modular e organizado em três principais arquivos:
+
+- **`database.py`:** Responsável pela conexão com o SQLite e criação da tabela `imoveis`.
+- **`functions.py`:** Contém funções auxiliares, como inserção de dados no banco e limpeza do formulário.
+- **`gui.py` (ou `main.py`):** Gerencia a interface gráfica e as interações com o usuário usando Tkinter.
+
+## Testando o Código
+
+1. Certifique-se de que o Python está instalado no seu computador.
+2. Copie o código ou utilize o repositório para garantir que todos os arquivos necessários estejam presentes.
+3. Execute o programa conforme descrito em **Como Executar**.
+
+Caso esteja utilizando **Linux** ou **macOS** e o comando `python` esteja vinculado ao Python 2, substitua por `python3`:
+
+```bash
+python3 gui.py
+```
+
+Se o programa rodar corretamente, uma janela com os campos e botões será exibida. Você poderá cadastrar e gerenciar imóveis diretamente por essa interface.
+
+## Possíveis Problemas
+
+Caso encontre algum erro durante a execução, por favor:
+- Verifique se todas as dependências estão instaladas.
+- Confirme que o Python 3.x está configurado corretamente.
+- Compartilhe o erro para suporte adicional.
+
+---
+
+*Organize e gerencie informações de imóveis com facilidade usando esta aplicação simples e eficiente!*
