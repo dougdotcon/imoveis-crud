@@ -6,7 +6,6 @@ from functions import inserir_dados
 
 # Funções auxiliares para interface gráfica
 
-
 def inserir_dados():
     # Inserir imóvel no banco de dados
     if (cb_tipo_negociacao.get() == '' or
