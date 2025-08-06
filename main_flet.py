@@ -8,14 +8,14 @@ def main(page: ft.Page):
     page.theme_mode = ft.ThemeMode.LIGHT
     page.window_width = 1200
     page.window_height = 800
-    page.bgcolor = ft.colors.BLUE_GREY_50
+    page.bgcolor = ft.Colors.BLUE_GREY_50
 
     # Barra superior
     page.appbar = ft.AppBar(
         title=ft.Text("Sistema de Gestão de Imóveis"),
         center_title=True,
-        bgcolor=ft.colors.BLUE,
-        color=ft.colors.WHITE,
+        bgcolor=ft.Colors.BLUE,
+        color=ft.Colors.WHITE,
     )
 
     # Estado da aplicação
@@ -31,7 +31,7 @@ def main(page: ft.Page):
         ],
         width=300,
         autofocus=True,
-        border_color=ft.colors.BLUE,
+        border_color=ft.Colors.BLUE,
     )
 
     status = ft.Dropdown(
@@ -43,7 +43,7 @@ def main(page: ft.Page):
             ft.dropdown.Option("À liberar"),
         ],
         width=300,
-        border_color=ft.colors.BLUE,
+        border_color=ft.Colors.BLUE,
     )
 
     endereco = ft.TextField(
@@ -52,7 +52,7 @@ def main(page: ft.Page):
         min_lines=2,
         max_lines=3,
         width=300,
-        border_color=ft.colors.BLUE,
+        border_color=ft.Colors.BLUE,
     )
 
     tipo_imovel = ft.Dropdown(
@@ -63,7 +63,7 @@ def main(page: ft.Page):
             ft.dropdown.Option("Terreno"),
         ],
         width=300,
-        border_color=ft.colors.BLUE,
+        border_color=ft.Colors.BLUE,
     )
 
     caracteristicas = ft.TextField(
@@ -72,7 +72,7 @@ def main(page: ft.Page):
         min_lines=3,
         max_lines=4,
         width=300,
-        border_color=ft.colors.BLUE,
+        border_color=ft.Colors.BLUE,
     )
 
     preco = ft.TextField(
@@ -80,7 +80,7 @@ def main(page: ft.Page):
         prefix_text="R$ ",
         width=300,
         keyboard_type="number",
-        border_color=ft.colors.BLUE,
+        border_color=ft.Colors.BLUE,
     )
 
     condicoes = ft.TextField(
@@ -89,7 +89,7 @@ def main(page: ft.Page):
         min_lines=3,
         max_lines=4,
         width=300,
-        border_color=ft.colors.BLUE,
+        border_color=ft.Colors.BLUE,
     )
 
     observacoes = ft.TextField(
@@ -98,7 +98,7 @@ def main(page: ft.Page):
         min_lines=3,
         max_lines=4,
         width=300,
-        border_color=ft.colors.BLUE,
+        border_color=ft.Colors.BLUE,
     )
 
     # Campos de pesquisa
@@ -112,7 +112,7 @@ def main(page: ft.Page):
             ft.dropdown.Option("Terreno"),
         ],
         width=200,
-        border_color=ft.colors.BLUE,
+        border_color=ft.Colors.BLUE,
     )
 
     pesquisa_status = ft.Dropdown(
@@ -126,18 +126,18 @@ def main(page: ft.Page):
             ft.dropdown.Option("À liberar"),
         ],
         width=200,
-        border_color=ft.colors.BLUE,
+        border_color=ft.Colors.BLUE,
     )
 
     pesquisa_endereco = ft.TextField(
         label="Endereço",
         hint_text="Digite o endereço",
         width=200,
-        border_color=ft.colors.BLUE,
+        border_color=ft.Colors.BLUE,
     )
 
     # Mensagem de status
-    status_message = ft.Text(size=16, color=ft.colors.GREEN)
+    status_message = ft.Text(size=16, color=ft.Colors.GREEN)
 
     # Container para listagem
     lista_container = ft.Container(
@@ -156,7 +156,7 @@ def main(page: ft.Page):
                 content=ft.Column(
                     controls=[
                         ft.ListTile(
-                            leading=ft.Icon(ft.icons.HOME_WORK, size=40, color=ft.colors.BLUE),
+                            leading=ft.Icon(ft.Icons.HOME_WORK, size=40, color=ft.Colors.BLUE),
                             title=ft.Text(
                                 f"{imovel['tipo_imovel']} - {imovel['tipo_negociacao']}",
                                 size=20,
@@ -164,7 +164,7 @@ def main(page: ft.Page):
                             ),
                             subtitle=ft.Text(
                                 imovel['endereco'],
-                                color=ft.colors.GREY_700,
+                                color=ft.Colors.GREY_700,
                             ),
                         ),
                         ft.Divider(),
@@ -195,18 +195,18 @@ def main(page: ft.Page):
                             controls=[
                                 ft.OutlinedButton(
                                     "Editar",
-                                    icon=ft.icons.EDIT,
+                                    icon=ft.Icons.EDIT,
                                     on_click=lambda _, id=imovel['id']: carregar_imovel_para_edicao(id),
                                     style=ft.ButtonStyle(
-                                        color=ft.colors.BLUE,
+                                        color=ft.Colors.BLUE,
                                     ),
                                 ),
                                 ft.OutlinedButton(
                                     "Excluir",
-                                    icon=ft.icons.DELETE,
+                                    icon=ft.Icons.DELETE,
                                     on_click=lambda _, id=imovel['id']: confirmar_exclusao(id),
                                     style=ft.ButtonStyle(
-                                        color=ft.colors.RED,
+                                        color=ft.Colors.RED,
                                     ),
                                 ),
                             ],
@@ -263,7 +263,7 @@ def main(page: ft.Page):
     def salvar_imovel(e):
         if not validar_campos():
             status_message.value = "⚠️ Preencha todos os campos obrigatórios!"
-            status_message.color = ft.colors.RED
+            status_message.color = ft.Colors.RED
             page.update()
             return
 
@@ -297,12 +297,12 @@ def main(page: ft.Page):
                 )
                 status_message.value = "✅ Imóvel cadastrado com sucesso!"
             
-            status_message.color = ft.colors.GREEN
+            status_message.color = ft.Colors.GREEN
             limpar_formulario()
             atualizar_listagem()
         except Exception as e:
             status_message.value = f"❌ Erro ao salvar: {str(e)}"
-            status_message.color = ft.colors.RED
+            status_message.color = ft.Colors.RED
         page.update()
 
     def confirmar_exclusao(id: int):
@@ -310,11 +310,11 @@ def main(page: ft.Page):
             if excluir_imovel(id):
                 dlg_confirmar.open = False
                 status_message.value = "✅ Imóvel excluído com sucesso!"
-                status_message.color = ft.colors.GREEN
+                status_message.color = ft.Colors.GREEN
                 atualizar_listagem()
             else:
                 status_message.value = "❌ Erro ao excluir imóvel"
-                status_message.color = ft.colors.RED
+                status_message.color = ft.Colors.RED
             page.update()
 
         dlg_confirmar = ft.AlertDialog(
@@ -355,11 +355,11 @@ def main(page: ft.Page):
                 ft.Container(
                     content=ft.Column(
                         controls=[
-                            ft.Icon(ft.icons.SEARCH_OFF, size=64, color=ft.colors.GREY_400),
+                            ft.Icon(ft.Icons.SEARCH_OFF, size=64, color=ft.Colors.GREY_400),
                             ft.Text(
                                 "Nenhum imóvel encontrado",
                                 size=16,
-                                color=ft.colors.GREY_700,
+                                color=ft.Colors.GREY_700,
                                 text_align=ft.TextAlign.CENTER,
                             ),
                         ],
@@ -374,32 +374,32 @@ def main(page: ft.Page):
     # Botões
     bt_salvar = ft.ElevatedButton(
         "Salvar",
-        icon=ft.icons.SAVE,
+        icon=ft.Icons.SAVE,
         on_click=salvar_imovel,
         style=ft.ButtonStyle(
-            bgcolor=ft.colors.BLUE,
-            color=ft.colors.WHITE,
+            bgcolor=ft.Colors.BLUE,
+            color=ft.Colors.WHITE,
             padding=20,
         ),
     )
 
     bt_limpar = ft.OutlinedButton(
         "Limpar",
-        icon=ft.icons.CLEANING_SERVICES,
+        icon=ft.Icons.CLEANING_SERVICES,
         on_click=limpar_formulario,
         style=ft.ButtonStyle(
-            color=ft.colors.BLUE,
+            color=ft.Colors.BLUE,
             padding=20,
         ),
     )
 
     bt_pesquisar = ft.ElevatedButton(
         "Pesquisar",
-        icon=ft.icons.SEARCH,
+        icon=ft.Icons.SEARCH,
         on_click=lambda _: atualizar_listagem(),
         style=ft.ButtonStyle(
-            bgcolor=ft.colors.BLUE,
-            color=ft.colors.WHITE,
+            bgcolor=ft.Colors.BLUE,
+            color=ft.Colors.WHITE,
             padding=20,
         ),
     )
@@ -411,7 +411,7 @@ def main(page: ft.Page):
         tabs=[
             ft.Tab(
                 text="Cadastro",
-                icon=ft.icons.ADD_HOME_WORK,
+                icon=ft.Icons.ADD_HOME_WORK,
                 content=ft.Container(
                     content=ft.Column(
                         controls=[
@@ -420,11 +420,11 @@ def main(page: ft.Page):
                                     "Cadastro de Imóveis",
                                     size=30,
                                     weight=ft.FontWeight.BOLD,
-                                    color=ft.colors.BLUE,
+                                    color=ft.Colors.BLUE,
                                 ),
                                 margin=ft.margin.only(bottom=20),
                             ),
-                            ft.Divider(height=1, color=ft.colors.BLUE_100),
+                            ft.Divider(height=1, color=ft.Colors.BLUE_100),
                             ft.Container(
                                 content=ft.ResponsiveRow(
                                     controls=[
@@ -456,19 +456,19 @@ def main(page: ft.Page):
                         scroll=ft.ScrollMode.AUTO,
                     ),
                     padding=20,
-                    bgcolor=ft.colors.WHITE,
+                    bgcolor=ft.Colors.WHITE,
                     border_radius=10,
                     shadow=ft.BoxShadow(
                         spread_radius=1,
                         blur_radius=15,
-                        color=ft.colors.BLUE_GREY_100,
+                        color=ft.Colors.BLUE_GREY_100,
                         offset=ft.Offset(0, 5),
                     ),
                 ),
             ),
             ft.Tab(
                 text="Listagem",
-                icon=ft.icons.LIST_ALT,
+                icon=ft.Icons.LIST_ALT,
                 content=ft.Container(
                     content=ft.Column(
                         controls=[
@@ -477,11 +477,11 @@ def main(page: ft.Page):
                                     "Listagem de Imóveis",
                                     size=30,
                                     weight=ft.FontWeight.BOLD,
-                                    color=ft.colors.BLUE,
+                                    color=ft.Colors.BLUE,
                                 ),
                                 margin=ft.margin.only(bottom=20),
                             ),
-                            ft.Divider(height=1, color=ft.colors.BLUE_100),
+                            ft.Divider(height=1, color=ft.Colors.BLUE_100),
                             ft.Container(
                                 content=ft.ResponsiveRow(
                                     controls=[
@@ -506,12 +506,12 @@ def main(page: ft.Page):
                         ],
                     ),
                     padding=20,
-                    bgcolor=ft.colors.WHITE,
+                    bgcolor=ft.Colors.WHITE,
                     border_radius=10,
                     shadow=ft.BoxShadow(
                         spread_radius=1,
                         blur_radius=15,
-                        color=ft.colors.BLUE_GREY_100,
+                        color=ft.Colors.BLUE_GREY_100,
                         offset=ft.Offset(0, 5),
                     ),
                 ),
